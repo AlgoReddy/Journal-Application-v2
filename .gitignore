@@ -1,5 +1,6 @@
 #custom files
-resources/application.properties
+#resources/application.properties
+.env
 
 HELP.md
 target/
