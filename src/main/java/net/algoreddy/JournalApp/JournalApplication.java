@@ -14,10 +14,13 @@ public class JournalApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(JournalApplication.class, args);
+        System.out.println("Mongo URI from env: " + System.getenv("MONGODB_URI"));
+
 	}
     @Bean
     public PlatformTransactionManager falana(MongoDatabaseFactory dbFactory){
         return new MongoTransactionManager(dbFactory);
     }
+
 
 }
