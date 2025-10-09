@@ -1,8 +1,6 @@
 package net.algoreddy.JournalApp.Service;
 
-import net.algoreddy.JournalApp.entity.JournalEntry;
 import net.algoreddy.JournalApp.entity.User;
-import net.algoreddy.JournalApp.repository.JournalEntryRepository;
 import net.algoreddy.JournalApp.repository.UserRepository;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +19,7 @@ public class UserService {
 
     public static final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
-    public void saveEntry(User user) {
+    public void saveUser(User user) {
         userRepository.save(user);
     }
 
