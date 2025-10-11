@@ -15,8 +15,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 @EnableWebSecurity
-@Profile("dev")
-public class SpringSecurity extends WebSecurityConfigurerAdapter {
+@Profile("prod")
+public class SpringSecurityProd extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserDetailsServiceImpl userDetailsService;
 
@@ -24,10 +24,10 @@ public class SpringSecurity extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/public/**").permitAll()
-                .antMatchers("/journal/**", "/user/**").authenticated()
-                .antMatchers("/admin/**").hasRole("ADMIN")
-                .anyRequest().permitAll()
+//                .antMatchers("/public/**").permitAll()
+//                .antMatchers("/journal/**", "/user/**").authenticated()
+//                .antMatchers("/admin/**").hasRole("ADMIN")
+                .anyRequest().authenticated()
                 .and()
                 .httpBasic();
 //        http.csrf().disable();
