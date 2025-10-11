@@ -1,5 +1,6 @@
 package net.algoreddy.JournalApp.entity;
 
+import lombok.Builder;
 import lombok.Data;
 import lombok.NonNull;
 import org.bson.types.ObjectId;
@@ -14,6 +15,8 @@ import java.util.List;
 
 @Document(collection = "users")
 @Data
+@Builder
+
 public class User {
     @Id
     private ObjectId id;
