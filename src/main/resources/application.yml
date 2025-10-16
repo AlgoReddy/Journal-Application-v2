@@ -1,3 +1,15 @@
-Spring:
+spring:
   profiles:
     active: dev
+
+#debugging:
+#      level:
+#          net:
+#            algoreddy:
+#               JournalApplication: DEBUG
+
+logging:
+  level:
+    net:
+      algoreddy:
+        JournalApp: DEBUG
